@@ -25,9 +25,12 @@ infoCont.addEventListener('click',e=>{
 const addCarrito = e =>{
     if (e.target.classList.contains('btnAddCarrito')) {
         setCarrito(e.target.parentElement)
+        
     }
     e.stopPropagation()
-
+        document.getElementById('infoModal').classList.add('invisible')
+        /* Swal.fire('Agregado al carrito') */
+        
 }
 const setCarrito = objeto =>{
 
@@ -217,11 +220,16 @@ async function showCards(){
 
 function showCarrito() {
     const ciudad = document.getElementById('selectorCiudad').value
-    document.querySelector('.paginaFullCarrito').classList.remove('active')
+    
     const ciudadWrite = document.getElementById('ciudadWrite')
     if(ciudad!='0'){
-        ciudadWrite.value = ciudad
+        ciudadWrite.innerHTML = ciudad
+        document.querySelector('.paginaFullCarrito').classList.remove('active')
     }else{
-        console.log('NO Hay NADA')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No has elegido tu sitio de entrega!',
+          })
     }
 }

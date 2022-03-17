@@ -254,5 +254,12 @@ section {
   border-radius: 20px;
   margin: 5%;
 }
-
+@media screen {
+  p{
+    font-size: 22px;
+  }
+  .carritoModal{
+ width: 80%;
+  }
+}
 /*# sourceMappingURL=style.css.map */

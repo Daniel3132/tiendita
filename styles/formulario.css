@@ -25,3 +25,17 @@ button{
     border: none;
     border-radius:  5px;
 }
+@media screen {
+    body{
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+    }
+    p{
+        font-size:smaller;
+    }
+    img{
+        width: 100%
+    };
+    
+}
