@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+*{
+    margin: 0;
+    font-family:'Poppins';
+    --verde: #0AC763;
+}
+.borde{
+    border: 1px solid red;
+}
+body{
+    margin: 1% 3%;
+}
+button,a{
+    cursor: pointer;
+}
+header,.header2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    button{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        border: none;
+        border-radius: 5%;
+        padding: 5px 10px;
+        background-color: var(--verde);
+    }
+}
+.imagenPrincipal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+    height: 17.5vw;
+    background-image: url('https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647215899/samples/tiendita/Rectangle_1_t4korb.png');
+    background-size:100%;
+    background-repeat: repeat;
+    p{
+        color: white;
+        font-weight: 600;
+    }
+}
+
+.aparteCarrito/* ,.infoAparte */{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(175, 111, 111, 0.383);
+}
+
+.carritoModal{
+    position:fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 40vw;
+    height: 100vh;
+    overflow-y: scroll;
+    .carritoTop,.carritoCard{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3%;
+        img{
+            width: 20%;
+        }
+    }
+    .carritoTop{
+        img{
+            width: 100%;
+        }
+    }
+    .carritoCard{
+
+        border: 2px solid rgb(156, 156, 156);
+        border-left: none;
+        border-right: none;
+        border-top: none;
+    }
+    .selectorU,button{
+        border-radius: 1000px;
+        width: 4rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        button{
+            width: fit-content;
+            height: fit-content;
+        }
+    }
+    .carritoBot{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        justify-content: space-around;
+        button{
+            width: fit-content;
+            display: flex;
+            gap: 10px;
+            background-color: var(--verde);
+            border: none;
+            p{
+                border-radius: 5px;
+                background-color:rgba(255, 68, 0, 0.671);
+            }
+        }
+    }
+}
+.active{
+    display: none;
+}
+.infoModal{
+    position:fixed;
+    background-color: white;
+    top: 1rem;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    box-shadow: 10rem 10rem 10rem 10rem rgba(255, 68, 0, 0.397);
+    .productoInfoCont{
+        display: flex;
+        flex-direction: column;
+        h4{
+            margin:3%;
+        }
+        .productoTop{
+            width: fit-content;
+            display: flex;
+            align-self: flex-end;
+        }
+        .productoInfo{
+            width: fit-content;
+            height:fit-content;
+            margin: 3%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            img{
+                width: 15rem;
+                height: 100%;
+            }
+            .infoCont{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 50%;
+            }
+            button{
+                width: 100%;
+                background-color: var(--verde);
+                border-radius: 5px;
+            }
+            
+        }
+        .cardsContainer{
+            margin: 0 2%;
+            overflow-y: hidden;
+        }
+    }
+}
+.invisible{
+    display: none;
+}
+section{
+    padding: 1rem ;
+    margin-bottom: 3%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px 5px rgb(207, 207, 207);
+}
+.cardsContainer{
+    margin: 3% 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    overflow-x: auto;
+    .card{
+        display: flex;
+        flex-direction: column;
+        width:8rem;
+        height: fit-content;
+        margin-bottom: 1rem;
+
+        #descuento{
+            background-color: grey;
+            padding: 2px;
+            border-radius: 1000px;
+            width: fit-content;
+        }
+        #precio{
+            font-weight: 600;
+            span{
+                text-decoration: line-through;
+                color: grey;
+            }
+        }
+        #nombre{
+            height: 5rem;
+        }
+        button{
+            width: 100%;
+            background-color: var(--verde);
+            border-radius: 5px;
+        }
+    }
+}
+.carritoModal:-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.carritoModal::-webkit-scrollbar-button:increment,.cardsContainer::-webkit-scrollbar-button {
+    display: none;
+} 
+.carritoModal::-webkit-scrollbar-thumb {
+    background-color: orangered;
+    border-radius: 20px;
+    margin: 5%;
+}
+.carritoModal::-webkit-scrollbar {
+    width: 8px;
+}
+.cardsContainer::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.cardsContainer::-webkit-scrollbar-button:increment,.cardsContainer::-webkit-scrollbar-button {
+    display: none;
+} 
+.cardsContainer::-webkit-scrollbar {
+    height: 8px;
+}
+.cardsContainer::-webkit-scrollbar-thumb {
+    background-color: orangered;
+    border-radius: 20px;
+    margin: 5%;
+}
+

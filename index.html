@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Tiendita</title>
+</head>
+<body>
+    
+    <header>
+        <img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647215906/samples/tiendita/Tiendita_c5piev.png" alt="" srcset="">
+    
+        <div class="header2">
+            <img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647216490/samples/tiendita/Icons_ingvdb.png" alt="" srcset="">
+            <select name=""  id="selectorCiudad" >
+                <option value="0">Elige tu Ciudad</option>
+                <option value="Bogotá">Bogotá</option>
+                <option value="Medellín">Medellín</option>
+                <option value="Cartagena">Cartagena</option>
+            </select>
+            <hr>
+            <button type="button" onclick="showCarrito()" >
+                <img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647216490/samples/tiendita/Icons_1_xrrvf8.png" alt="">
+                <p class="carCount"></p>
+            </button>
+        </div>
+    
+    
+    </header>
+
+
+    <main>
+        <section class="paginaFullCarrito active">
+            <div class="aparteCarrito"></div>
+            <div class="carritoModal">
+                <div class="carritoTop ">
+                    <p>Entregar en: <SPAN id="ciudadWrite"></SPAN> </p>
+                    <a onclick="document.querySelector('.paginaFullCarrito').classList.add('active')" id="btnCloseCarrito"><img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647268547/samples/tiendita/cancel_djjl2t.png" alt="" srcset=""></a>
+                </div>
+                <div class="carritoProducts " id="carritoProducts">
+                    <div id="contenedorCartas"></div>
+                    <div class="carritoBot" id="carritoBot">
+                        <button id="btnVaciar">Vaciar Carrito</button>
+                        <a href="formulario.html"><button  id="btnPagar"></button></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="infoModal invisible" id="infoModal">
+            <div class="productoInfoCont">
+                <div class="productoTop">
+                    <a onclick="document.getElementById('infoModal').classList.add('invisible')" id="btnCloseCarrito"><img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647268547/samples/tiendita/cancel_djjl2t.png" alt="" srcset=""></a>
+                </div>
+                <div class="productoInfo " id="productoInfo">
+                    <img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647216490/samples/tiendita/Product_v3lbb4.png" alt="">
+                    <div class="infoCont " id="infoCont">
+                        <!-- <h2 id="nombre">Limón con semilla</h2>
+                        <p id="precio">$85.00</p>
+                        <p>Peso apróximado por pieza puede variar de acuerdo al peso real</p>    
+                        <h5>selecciona la cantidad que deseas</h5>
+                        <input type="number" id="cantidadInput" style="width: 2rem;" min="1"> -->            
+                    </div>
+                </div>
+                <h4>recomendados</h4>
+                <div class="cardsContainer" id="recomendados">
+                                               
+                </div>
+            </div>
+            <!-- <div class="infoAparte"></div> -->
+        </section>
+
+
+
+        
+        <div class="imagenPrincipal">
+            <p>Adquiere todos tus productos favoritos al mejor precio!</p>
+        </div>
+
+        <section class="ofertas" id="ofertas">
+            <h4>Ofertas</h4>
+            <div class="cardsContainer" id="cardsContainer">
+<!--                 <div class="card  ">
+                    <p id="descuento">32% dto.</p>
+                    <img  class="" src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647216490/samples/tiendita/Product_v3lbb4.png" alt="">
+                    <span id="precio">
+                        $45.2/kg
+                        <span>$34/kg</span>
+                    </span>
+                    <p id="nombre">Limón con semilla</p>
+                    <button>Agregar</button>
+                </div>  -->                 
+            </div>                                           
+        </section>
+
+
+        <section class="popularCont">
+            <h4>Populares</h4>
+            <div class="cardsContainer" id="cardsContainer2">
+<!--                 <div class="card ">
+                    <p id="descuento">32% dto.</p>
+                    <img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647216490/samples/tiendita/Product_v3lbb4.png" alt="">
+                    <p id="precio">$45.2/kg</p>
+                    <p id="nombre">Limón</p>
+                    <button>Agregar</button>
+                </div> -->             
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+section{
+    width: 50%;
+}
+.carritoModal{
+    position: relative;
+}
+.media{
+    width: 46%;
+}
+input{
+    margin: 4% 0;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
+button{
+    margin: 5% 0;
+    width: 100%;
+    background-color: #0AC763;
+    border: none;
+    border-radius:  5px;
+}
