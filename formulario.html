@@ -11,26 +11,32 @@
     <title>Formulario Pago</title>
 </head>
 <body>
-    <section class="carritoModal">
+    <header>
+        <a href="index.html"><img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647526462/samples/tiendita/cancel_fmuszg.png" alt=""></a>
+        <p>Volver</p>
+    </header>
 
-    </section>
+    <main>
+        <section class="carritoModal">
 
-    <section class="formularioCont">
-        <form action="">
-            <LABEL>Correo Electronico</LABEL><br>
-            <input  class="full" type="email"  checked><br>
-            <LABEL>Informacion de la Tarjeta</LABEL><br>
-            <input  class="full" type="number" placeholder="1234 1234 1234 1234" checked><br>
-            <div class="infoTarjeta2">
-                <input type="date" class="media" placeholder="MM/YY" checked>
-                <input type="number" class="media" placeholder="CVV" checked>
-            </div>
-            <LABEL>Nombre en la tarjeta</LABEL><br>
-            <input class="full"  type="name" checked>
-            <button type="submit">Pagar</button>
-        </form>
-    </section>
+        </section>
 
+        <section class="formularioCont">
+            <form action="">
+                <LABEL>Correo Electronico</LABEL><br>
+                <input  class="full" type="email"  required><br>
+                <LABEL>Informacion de la Tarjeta</LABEL><br>
+                <input  class="full" type="number" placeholder="1234 1234 1234 1234" required><br>
+                <div class="infoTarjeta2">
+                    <input type="date" class="media" placeholder="MM/YY" required>
+                    <input type="number" class="media" placeholder="CVV" required>
+                </div>
+                <LABEL>Nombre en la tarjeta</LABEL><br>
+                <input class="full"  type="name" required>
+                <button type="submit" id="btnPagar"></button>
+            </form>
+        </section>
+    </main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts\formulario.js"></script>
 </body>

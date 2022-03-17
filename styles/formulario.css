@@ -1,7 +1,12 @@
-body{
+main{
     display: flex;
     flex-direction: row;
     gap: 5%;
+}
+header{
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3%;
 }
 section{
     width: 50%;
@@ -25,11 +30,14 @@ button{
     border: none;
     border-radius:  5px;
 }
-@media screen {
-    body{
+@media (max-width: 600px) {
+    main{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 5%;
+    }
+    section{
+        width: 80vw;
     }
     p{
         font-size:smaller;

@@ -25,13 +25,13 @@ infoCont.addEventListener('click',e=>{
 const addCarrito = e =>{
     if (e.target.classList.contains('btnAddCarrito')) {
         setCarrito(e.target.parentElement)
-        
-    }
-    e.stopPropagation()
         document.getElementById('infoModal').classList.add('invisible')
-        /* Swal.fire('Agregado al carrito') */
+        Swal.fire('Agregado al carrito')
+    }
         
+    e.stopPropagation()    
 }
+
 const setCarrito = objeto =>{
 
     const producto ={
@@ -60,7 +60,7 @@ const pintarCarrito = () =>{
             <img src="${producto.imagen}" alt="">
             <div class="carritoInfo ">
                 <p>${producto.nombre}</p>
-                <p>${producto.precio * producto.cantidad}</p>
+                <p>$${Math.ceil(producto.precio * producto.cantidad)}</p>
             </div>
             <div class="selectorU">
                 <button type="button" data-id="${producto.id}" class="btn-resta"  >-</button>
@@ -75,10 +75,6 @@ const pintarCarrito = () =>{
     pintarCarritoBot()
 }
 
-
-
-
-
 const pintarCarritoBot = () =>{
 
     const nCantidad = Object.values(carrito).reduce((acc,{cantidad}) => acc + cantidad, 0)
@@ -91,7 +87,7 @@ const pintarCarritoBot = () =>{
     btnPagar.innerHTML= `
     <p>${nCantidad}</p>
     Ir a pagar
-    <p>${nPrecio}</p>`
+    <p>$${Math.ceil(nPrecio)}</p>`
 
     const botonVaciar = document.getElementById('btnVaciar')
     botonVaciar.addEventListener('click', () => {
@@ -104,7 +100,7 @@ const pintarCarritoBot = () =>{
     })
 }
 
-const btnAumentarDisminuir = e => {
+const btnAumentarDisminuir = (e) => {
 
     if (e.target.classList.contains('btn-suma')) {
         const producto = carrito[e.target.dataset.id]
@@ -143,7 +139,8 @@ async function modalInfo(idChosen,categoriaChosen){
             <div class="infoCont" id="infoCont">
                 <img src="${imagen}" class="imgElegido" alt="">
                 <h2 id="nombre">${nombre}</h2>
-                <p id="precio">${precioAhora}</p>
+               
+                $ <p id="precio">${precioAhora}</p>
                 <p>${nota}</p>    
                 <h5>selecciona la cantidad que deseas</h5>
                 <input type="number" id="cantidadInput" style="width: 2rem;" min="1" value="1">
@@ -165,7 +162,7 @@ async function modalInfo(idChosen,categoriaChosen){
                 <button onclick="modalInfo(${id},ofertas)" class="btnInfo">Agregar</button>
             </div>   
             `
-        }else if (categoriaChosen=='populares' && categoria == 'populares' && id != idChosen){
+        }else {
             recomendados.innerHTML+=`
             <div class="card">
                 <img  class="" src="${imagen}" alt="">
@@ -216,7 +213,6 @@ async function showCards(){
         }
     })
 }
-
 
 function showCarrito() {
     const ciudad = document.getElementById('selectorCiudad').value

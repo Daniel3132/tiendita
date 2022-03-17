@@ -152,15 +152,16 @@ header button, .header2 button {
   flex-direction: row;
   justify-content: space-around;
 }
-.infoModal .productoInfoCont .productoInfo img {
-  width: 15rem;
-  height: 100%;
-}
 .infoModal .productoInfoCont .productoInfo .infoCont {
   display: flex;
   flex-direction: column;
+  align-self: center;
   gap: 15px;
   width: 50%;
+}
+.infoModal .productoInfoCont .productoInfo .infoCont img {
+  width: 10rem;
+  height: 100%;
 }
 .infoModal .productoInfoCont .productoInfo button {
   width: 100%;
@@ -254,12 +255,20 @@ section {
   border-radius: 20px;
   margin: 5%;
 }
-@media screen {
-  p{
-    font-size: 22px;
+
+@media (max-width: 600px) {
+  .imagenPrincipal {
+    height: 25vh;
   }
-  .carritoModal{
- width: 80%;
+
+  p {
+    font-size: 18px;
+  }
+
+  .carritoModal, .infoCont {
+    width: 100%;
+    margin: 0;
   }
 }
+
 /*# sourceMappingURL=style.css.map */
